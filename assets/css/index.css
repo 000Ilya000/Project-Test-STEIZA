@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "AvenirNextRegular";
+    src: url("../Fonts/AvenirNext/AvenirNextRegular/avenirnextcyr-regular.eot") format("embedded-opentype");
+    src: url("../Fonts/AvenirNext/AvenirNextRegular/avenirnextcyr-regular.woff") format("woff"),
+            url("../Fonts/AvenirNext/AvenirNextRegular/avenirnextcyr-regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AvenirNextBold";
+    src: url("../Fonts/AvenirNext/AvenirNextBold/avenirnextcyr-bold.eot") format("embedded-opentype");
+    src: url("../Fonts/AvenirNext/AvenirNextBold/avenirnextcyr-bold.woff") format("woff"),
+            url("../Fonts/AvenirNext/AvenirNextBold/avenirnextcyr-bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  /* color: #cf2121; */
+}
+
+.container_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+
+.button {
+    display: inline-block;
+    /* color: #428EC0; */
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .1em 6em;
+    outline: none;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.button { background: #428EC0; }
+.button:hover { background: #416074; }
+/* .button:active { background: rgb(152, 63, 63); } */
+
+.p_login {
+    color: white;
+    font-family: 'AvenirNextRegular';   
+    font-size: 20px;
+}
