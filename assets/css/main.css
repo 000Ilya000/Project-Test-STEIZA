@@ -23,7 +23,7 @@
 }
 
 .img_logo {
-    width: 16%;
+    max-height: 90px;
 }
 
 .main_title {
@@ -88,11 +88,12 @@ h1 {
     font-family: 'AvenirNextRegular';
  }
  .form-row input {
+    padding-left: 0px;
+    padding-right: 0px;
     display: block;
     width: 100%;
-    padding: 0 10px;
     line-height: 40px;
-    font-family: 'AvenirNextRegular';
+    font-family: 'AvenirNextRegular', sans-serif;
     background: none;
     border-width: 0;
     border-bottom: 2px solid #428EC0;
@@ -136,39 +137,63 @@ h1 {
 
 
 
+.container_but {
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_but {
+    font-weight: 700;
+    text-decoration: none;
+    padding: 20px 140px;
+    user-select: none;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.4s;
+    color: white;
+    font-family: 'AvenirNextRegular';
+    font-size: 22px;
+    background: #428EC0;
+}
+
+.main_but:hover {
+    background: #416074;
+}
 
 
-
-a.text:active, /* активная/посещенная ссылка */
-a.text:hover,  /* при наведении */
+a.text:active,
+a.text:hover, 
 a {
   text-decoration: none;
-  /* color: #cf2121; */
+}
+
+/* .main_button {
+    display: flex;
+    justify-content: center;
 }
 
 .container_button {
     display: flex;
     justify-content: center;
-    /* margin-top: 32px; */
 }
 
 
 .button {
     display: inline-block;
-    /* color: #428EC0; */
     font-weight: 700;
     text-decoration: none;
     user-select: none;
     padding: .1em 10em;
     outline: none;
-    /* border: 1px solid; */
     border-radius: 10px;
     transition: 0.4s;
 }
 
 .button { background: #428EC0; }
-.button:hover { background: #416074; }
-/* .button:active { background: rgb(152, 63, 63); } */
+.button:hover { background: #416074; } */
 
 .p_login {
     color: white;
@@ -211,7 +236,6 @@ a {
     font-family: 'AvenirNextRegular';
     color: #414243;
     font-size: 20px;
-    margin-right: 8px;
 }
 
 .registration p a {

@@ -16,11 +16,11 @@
     font-weight: normal;
 }
 
-a.text:active, /* активная/посещенная ссылка */
-a.text:hover,  /* при наведении */
+/* a.text:active,
+a.text:hover,  
 a {
   text-decoration: none;
-  /* color: #cf2121; */
+
 }
 
 .container_button {
@@ -32,23 +32,46 @@ a {
 
 .button {
     display: inline-block;
-    /* color: #428EC0; */
     font-weight: 700;
     text-decoration: none;
     user-select: none;
     padding: .1em 6em;
     outline: none;
-    /* border: 1px solid; */
     border-radius: 10px;
     transition: 0.4s;
 }
 
 .button { background: #428EC0; }
 .button:hover { background: #416074; }
-/* .button:active { background: rgb(152, 63, 63); } */
 
 .p_login {
     color: white;
     font-family: 'AvenirNextRegular';   
     font-size: 20px;
+} */
+
+.container_but {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_but {
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+    user-select: none;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.4s;
+    color: white;
+    font-family: 'AvenirNextRegular';
+    font-size: 20px;
+    background: #428EC0;
+}
+
+.main_but:hover {
+    background: #416074;
 }
