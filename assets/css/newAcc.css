@@ -200,11 +200,18 @@ a {
     font-size: 16px;
 }
 
+.socials_cont {
+    display: flex;
+    justify-content: center;
+}
+
 .container_social {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    width: 446px;
+    justify-content: space-between;
 }
 
 .forgot_pass {

@@ -201,15 +201,22 @@ a {
     font-size: 16px;
 }
 
+.socials_cont {
+    display: flex;
+    justify-content: center;
+}
+
 .container_social {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    width: 446px;
+    justify-content: space-between;
 }
 
 .forgot_pass {
-    margin-right: 60px;
+    /* margin-right: 60px; */
     font-family: 'AvenirNextRegular';
 }
 
@@ -240,4 +247,11 @@ a {
 
 .registration p a {
     color: #416074;
+}
+
+@media (min-width: 435px) {
+    .container_inputs {
+        display: flex;
+        align-items: center;
+    }
 }
