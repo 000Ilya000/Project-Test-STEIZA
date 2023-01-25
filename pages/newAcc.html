@@ -5,9 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новый аккаунт</title>
-    <link rel="stylesheet" href="newAcc.css">
+    <link rel="stylesheet" href="../assets/css/newAcc.css">
 </head>
 <body>
-    
+    <div class="container_logo">
+        <img class="img_logo" src="../assets/img/Logo.jpg" alt="logo">
+    </div>
+    <div class="main_title">
+        <h1>Создайте новый аккаунт</h1>
+    </div>
+
+    <div class="container_inputs">
+        <div class="form-row">
+            <input type="text" id="email" required autocomplete="off"><label for="email">Email</label>
+        </div>
+        <div class="form-row">
+            <input type="password" id="password" required autocomplete="off"><label for="password">Пароль</label>
+        </div>
+    </div>
+
+    <a href="#">
+        <div class="container_button">
+            <div class="button">
+                <p class="p_login">Войти в аккаунт</p>
+            </div>
+        </div>
+    </a>
+
+    <div class="container_social">
+        <div class="forgot_pass">
+            <a href="#">
+                <p>Забыли пароль?</p>
+            </a>
+        </div>
+
+
+        <div class="socials">
+            <div class="login_with">
+                <p сlass="login_with" >Войдите через:</p>
+            </div>
+            <div class="vk">
+                <a href="#">
+                    <img src="../assets/img/icons8-vk-в-круге.svg" alt="google">
+                </a>
+            </div>
+            <div class="google">
+                <a href="#">
+                    <img src="../assets/img/icons8-google.svg" alt="vk">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="registration">
+        <p>Впервые на Юри.тех? <a href="./newAcc.html">Зарегистрироваться</a></p>
+    </div>
 </body>
 </html>
