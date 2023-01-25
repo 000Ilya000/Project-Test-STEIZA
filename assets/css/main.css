@@ -175,3 +175,45 @@ a {
     font-family: 'AvenirNextRegular';   
     font-size: 16px;
 }
+
+.container_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.forgot_pass {
+    margin-right: 60px;
+    font-family: 'AvenirNextRegular';
+}
+
+.forgot_pass a {
+    color: #416074;
+}
+
+.login_with {
+    margin-right: 10px;
+    font-family: 'AvenirNextRegular';
+    color: #414243;
+}
+
+.socials {
+    display: flex;
+}
+
+.registration {
+    display: flex;
+    justify-content: center
+}
+
+.registration p {
+    font-family: 'AvenirNextRegular';
+    color: #414243;
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.registration p a {
+    color: #416074;
+}
