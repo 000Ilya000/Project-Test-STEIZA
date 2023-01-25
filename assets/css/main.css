@@ -249,9 +249,49 @@ a {
     color: #416074;
 }
 
-@media (min-width: 435px) {
+@media (max-width: 435px) {
     .container_inputs {
         display: flex;
+        max-width: fit-content;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .main_but {
+        padding: 20px 100px;
+    }
+
+    .registration p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 391px) {
+    h1 {
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 382px) {
+    .main_but {
+        padding: 15px 80px;
+    }
+
+    h1 {
+        font-size: x-large;
+    }
+
+    .registration {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 340px) {
+    .main_but {
+        padding: 15px 60px;
+    }
+
+    .socials {
         align-items: center;
     }
 }
