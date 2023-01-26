@@ -16,12 +16,33 @@
     font-weight: normal;
 }
 
+html {
+    min-width:350px
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}    
+
+.container {
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 
 .main_form {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 .container_logo {
@@ -52,7 +73,7 @@ h1 {
 }
 
 .ui-form {
-    max-width: 350px;
+    max-width: 100%;
     padding: 80px 30px 30px;
     margin: 50px auto 30px;
     background: white;
@@ -72,7 +93,7 @@ h1 {
     z-index: -1;
     left: 60px;
     top: -30px;
-    width: 100px;
+    width: 100%;
     height: 100px;
     border-radius: 50%;
     background: #416074;
@@ -92,7 +113,7 @@ h1 {
  .form-row {
     position: relative;
     margin-bottom: 40px;
-    width: 480px;
+    width: -webkit-fill-available;
     font-family: 'AvenirNextRegular';
  }
  .last_form {
@@ -149,7 +170,7 @@ h1 {
 }
 
 .custom-checkbox {
-    width: 16px;
+    width: 3%;
     margin-left: 0;
     margin-right: 7px;
 }
@@ -199,13 +220,6 @@ a {
 .button { background: #428EC0; }
 .button:hover { background: #416074; } */
 
-.container_but {
-    min-height: 10vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .main_but {
     font-weight: 700;
@@ -219,6 +233,9 @@ a {
     font-family: 'AvenirNextRegular';
     font-size: 14px;
     background: #428EC0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main_but:hover {
@@ -231,9 +248,11 @@ a {
     font-size: 14px;
 }
 
-.socials_cont {
-    display: flex;
-    justify-content: center;
+
+.socials p {
+    margin-right: 10px;
+    font-family: 'AvenirNextRegular';
+    color: #414243;
 }
 
 .container_social {
@@ -241,40 +260,79 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 446px;
+    width: 100%;
     justify-content: space-between;
 }
 
 .forgot_pass {
     margin-right: 60px;
     font-family: 'AvenirNextRegular';
+    font-size: 14px;
 }
 
-.forgot_pass a {
+.forgot_pass  {
     color: #416074;
 }
 
 .socials {
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 
 .registration {
     display: flex;
-    justify-content: center
-}
-
-.registration p {
+    justify-content: center;
     font-family: 'AvenirNextRegular';
     color: #414243;
     font-size: 14px;
 }
 
-.registration p a {
+
+.registration a {
     color: #416074;
 }
 
-@media (max-width: 435px) {
+@media (max-width: 450px) {
+    .main_but {
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+
+    .main_title {
+        display: flex;
+        justify-content: center;
+        font-size: x-large;
+    }
+
+    .agree-condit p {
+        font-size: 12px;
+    }
+
+    .agree-condit p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .agree-condit p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 321px) {
+    .main_but {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+
+    .main_title {
+        font-size: larger;
+    }
+}
+
+
+/* @media (max-width: 435px) {
     .container_inputs {
         display: flex;
         max-width: fit-content;
@@ -361,4 +419,4 @@ a {
         flex-direction: column;
         align-items: flex-start
     }
-}
+} */

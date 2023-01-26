@@ -50,7 +50,15 @@ a {
     font-size: 20px;
 } */
 
-.container_but {
+/* .container_but {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+body {
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -59,6 +67,7 @@ a {
 }
 
 .main_but {
+    display: flex;
     font-weight: 700;
     text-decoration: none;
     padding: 10px 20px;
