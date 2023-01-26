@@ -16,6 +16,7 @@
     font-weight: normal;
 }
 
+
 .main_form {
     display: flex;
     flex-wrap: nowrap;
@@ -113,7 +114,7 @@ h1 {
     position: absolute;
     left: 13px;
     color: #B3B3B4;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 300;
     transform: translateY(-35px);
     transition: all 0.2s ease;
@@ -126,11 +127,12 @@ h1 {
  .form-row input:focus+label, .form-row input:valid+label {
     transform: translateY(-60px);
     margin-left: -14px;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 400;
     outline: 0;
     border-color: #416074;
     color: #416074;
+    cursor: default;
  }
  .ui-form input[type="submit"] {
     width: 100%;
@@ -161,7 +163,7 @@ h1 {
 
 .agree-condit p {
     font-family: 'AvenirNextRegular';   
-    font-size: 16px;
+    font-size: 14px;
     color: #414243;
 }
 
@@ -215,7 +217,7 @@ a {
     transition: 0.4s;
     color: white;
     font-family: 'AvenirNextRegular';
-    font-size: 22px;
+    font-size: 14px;
     background: #428EC0;
 }
 
@@ -226,7 +228,7 @@ a {
 .p_login {
     color: white;
     font-family: 'AvenirNextRegular';   
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .socials_cont {
@@ -254,6 +256,7 @@ a {
 
 .socials {
     display: flex;
+    align-items: center;
 }
 
 .registration {
@@ -264,7 +267,7 @@ a {
 .registration p {
     font-family: 'AvenirNextRegular';
     color: #414243;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .registration p a {
