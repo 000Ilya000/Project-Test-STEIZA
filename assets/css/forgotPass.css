@@ -16,6 +16,13 @@
     font-weight: normal;
 }
 
+.main_form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
 a.text:active,
 a.text:hover, 
 a {
@@ -113,6 +120,7 @@ h1 {
     font-weight: 300;
     transform: translateY(-35px);
     transition: all 0.2s ease;
+    cursor: text;
  }
  .form-row input:focus {
     outline: 0;
@@ -177,7 +185,7 @@ h1 {
 .logIn a {
     color: #416074;
     font-family: 'AvenirNextRegular';
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .regist {
@@ -250,5 +258,31 @@ h1 {
 
     .socials {
         align-items: center;
+    }
+}
+
+@media (max-width: 280px) {
+    h1 {
+        font-size: larger;
+    }
+
+    .main_but {
+        padding: 15px 10px;
+        font-size: large;
+    }
+
+    .regist {
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .regist p {
+        font-size: 15px;
+    }
+
+    .regist a {
+        font-size: 15px;
     }
 }
