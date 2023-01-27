@@ -333,20 +333,40 @@ a {
     font-family: 'AvenirNextRegular';
     color: #414243;
     font-size: 14px;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 40px;
+    /* align-items: center;
+    flex-direction: column; */
+    /* margin-top: 30px; */
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .registration a{
     color: #416074;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+
 }
 
-@media (max-width: 400px) {
-    .main_but {
+@media (max-width: 420px) {
+    /* .main_but {
         padding-right: 100px;
         padding-left: 100px;
+    } */
+
+    .registration {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .registration a {
+        margin-top: 8px;
+    }
+
+    .form-inner {
+        max-width: 90%;
+    }
+
+    .container_social {
+        max-width: 90%;
     }
 
     .main_title {
@@ -357,11 +377,17 @@ a {
         
 }
 
+@media (max-width: 370px) {
+    .form-inner {
+        max-width: 80%;
+    }
+}
+
 @media (max-width: 321px) {
-    .main_but {
+    /* .main_but {
         padding-right: 60px;
         padding-left: 60px;
-    }
+    } */
 
     .main_title {
         font-size: larger;

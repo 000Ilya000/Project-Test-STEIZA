@@ -15,7 +15,7 @@
             <h1 class="main_title">Создайте новый аккаунт</h1>
         
             <form action="" class="main_form">
-                <div class="container_inputs">
+                <!-- <div class="container_inputs">
                     <div class="form-row">
                         <input type="text" id="email" required autocomplete="off"><label for="email">Email</label>
                     </div>
@@ -25,11 +25,33 @@
                     <div class="form-row last_form">
                         <input type="password" id="repit-password" required autocomplete="off"><label for="repit-password">Повторите пароль</label>
                     </div>
+                </div> -->
+                <div class="form-inner">
+                    <input type="email" placeholder="Электронная почта">
+                    <input type="password" placeholder="Пароль">
+                    <input class="last_input" type="password" placeholder="Повторите пароль">
                 </div>
             
                 <div class="agree-condit">
                     <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
                     <p>Я согласен с <a href="#">Условиями</a> и <a href="#">Политикой Конфиденциальности</a></p>
+                </div>
+
+                <div class="container_social">
+                    <a class="forgot_pass" href="./forgotPass.html">Забыли пароль?</a>
+                    
+                    <a href="#" class="main_but">Зарегестрироваться</a>
+
+
+                    <div class="socials">
+                        <!-- <p class="socials_p">Войдите через:</p> -->
+                        <a class="vk" href="#">
+                            <img src="../assets/img/icons8-vk-в-круге.svg" class="socials_img" alt="google">
+                        </a>
+                        <a class="google" href="#">
+                            <img src="../assets/img/icons8-google.svg" class="socials_img" alt="vk">
+                        </a>
+                    </div>
                 </div>
             
                 <!-- <a href="#">
@@ -40,10 +62,10 @@
                     </div>
                 </a> -->
             
-                <a href="#" class="main_but">Зарегистрироваться</a>
+                <!-- <a href="#" class="main_but">Зарегистрироваться</a> -->
             </form>
         
-            <div class="container_social">
+            <!-- <div class="container_social">
                 <a class="forgot_pass" href="./forgotPass.html">Забыли пароль?</a>
         
         
@@ -56,7 +78,7 @@
                         <img src="../assets/img/icons8-google.svg" alt="vk">
                     </a>
                 </div>
-            </div>
+            </div> -->
         
             <p class="registration">У вас уже есть аккаунт? <a href="./main.html">Войти</a></p>
         </div>

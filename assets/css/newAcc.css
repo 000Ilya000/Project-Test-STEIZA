@@ -48,7 +48,7 @@ section {
 .container_logo {
     justify-content: center;
     display: flex;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .img_logo {
@@ -66,7 +66,34 @@ h1 {
     color: #416074;
 }
 
-.container_inputs {
+.form-inner  {
+    /* padding: 50px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-inner .last_input {
+    margin-bottom: 0;
+}
+
+.form-inner input {
+    /* display: block; */
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    /* background: #E9EFF6; */
+    line-height: 50px;
+    /* border-width: 1px; */
+    border-radius: 40px;
+    border: 1px solid rgba(65, 66, 67, 0.6);
+    font-family: 'AvenirNextRegular', sans-serif;
+    outline-color: rgba(66, 142, 192, 0.4);
+    caret-color: rgba(66, 142, 192);
+}
+
+/* .container_inputs {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,7 +194,8 @@ h1 {
  .ui-form p {
     margin: 0;
     padding-top: 10px;
-}
+} */
+
 
 .custom-checkbox {
     width: 3%;
@@ -177,8 +205,8 @@ h1 {
 
 .agree-condit {
     display: flex;
-    justify-content: center;
     margin-top: 8px;
+    justify-content: center;
     margin-bottom: 8px;
 }
 
@@ -224,7 +252,8 @@ a {
 .main_but {
     font-weight: 700;
     text-decoration: none;
-    padding: 20px 140px;
+    padding: 10px 20px;
+    /* max-width: 80px; */
     user-select: none;
     outline: none;
     border-radius: 10px;
@@ -259,15 +288,16 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width: 100%;
     justify-content: space-between;
 }
 
 .forgot_pass {
-    margin-right: 60px;
+    /* margin-right: 60px; */
     font-family: 'AvenirNextRegular';
     font-size: 14px;
+    min-width: 109px;
 }
 
 .forgot_pass  {
@@ -278,6 +308,12 @@ a {
     display: flex;
     align-items: center;
     font-size: 14px;
+    min-width: 109px;
+    justify-content: space-between
+}
+
+.socials_img {
+    max-width: 40px;
 }
 
 .registration {
@@ -286,6 +322,8 @@ a {
     font-family: 'AvenirNextRegular';
     color: #414243;
     font-size: 14px;
+    width: 60%;
+    justify-content: space-evenly;
 }
 
 
