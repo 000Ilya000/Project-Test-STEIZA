@@ -251,9 +251,13 @@ h1 {
 }
 
 @media (max-width: 450px) {
-    .main_but {
+    /* .main_but {
         padding-right: 80px;
         padding-left: 80px;
+    } */
+
+    .regist {
+        flex-direction: column
     }
 
     .main_title {
@@ -272,10 +276,10 @@ h1 {
 }
 
 @media (max-width: 365px) {
-    .main_but {
+    /* .main_but {
         padding-right: 40px;
         padding-left: 40px;
-    }
+    } */
 
     .main_title {
         font-size: larger;
@@ -283,10 +287,10 @@ h1 {
 }
 
 @media (max-width: 365px) {
-    .main_but {
+    /* .main_but {
         padding-right: 40px;
         padding-left: 40px;
-    }
+    } */
 
     .main_title {
         font-size: larger;

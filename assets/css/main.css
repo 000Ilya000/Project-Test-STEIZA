@@ -347,10 +347,22 @@ a {
 }
 
 @media (max-width: 420px) {
-    /* .main_but {
-        padding-right: 100px;
-        padding-left: 100px;
-    } */
+    .main_but {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .forgot_pass {
+        /* font-size: 12px; */
+        order: 1;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .socials {
+        order: 1;
+        justify-content: center
+    }
 
     .registration {
         align-items: center;
@@ -367,6 +379,7 @@ a {
 
     .container_social {
         max-width: 90%;
+        flex-direction: column;
     }
 
     .main_title {
@@ -380,6 +393,11 @@ a {
 @media (max-width: 370px) {
     .form-inner {
         max-width: 80%;
+    }
+
+    .main_but {
+        width: 90%;
+        max-width: 100%;
     }
 }
 

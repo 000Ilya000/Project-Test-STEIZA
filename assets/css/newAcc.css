@@ -29,7 +29,7 @@ section {
 }    
 
 .container {
-    max-width: 500px;
+    min-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -331,10 +331,54 @@ a {
     color: #416074;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .main_but {
-        padding-right: 100px;
-        padding-left: 100px;
+        width: 100%;
+    }
+
+    .registration {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .forgot_pass {
+        /* font-size: 12px; */
+        order: 1;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .registration a {
+        margin-top: 8px;
+    }
+
+    .socials {
+        order: 1;
+        justify-content: center
+    }
+
+    .main_form {
+        align-items: center;
+    }
+
+    .form-inner {
+        max-width: 90%;
+    }
+
+    /* .form-inner {
+        max-width: 90%;
+        align-items: normal
+    } */
+
+    .container_social {
+        max-width: 90%;
+        flex-direction: column;
+    }
+
+    .main_title {
+        display: flex;
+        justify-content: center;
+        font-size: x-large;
     }
 
     .main_title {
@@ -356,13 +400,21 @@ a {
     .agree-condit p {
         font-size: 11px;
     }
+
+    .form-inner {
+        max-width: 80%;
+    }
+
+    .main_but {
+        width: 90%;
+    }
 }
 
 @media (max-width: 321px) {
-    .main_but {
+    /* .main_but {
         padding-right: 60px;
         padding-left: 60px;
-    }
+    } */
 
     .main_title {
         font-size: larger;
