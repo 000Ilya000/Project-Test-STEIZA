@@ -15,13 +15,18 @@
             <h1 class="main_title">Войдите в ваш аккаунт</h1>
         
             <form action="" class="main_form">
-                <div class="container_inputs">
+                <!-- <div class="container_inputs">
                     <div class="form-row">
                         <input type="text" id="email" required autocomplete="off"><label for="email">Логин</label>
                     </div>
                     <div class="form-row">
                         <input type="password" id="password" required autocomplete="off"><label for="password">Пароль</label>
                     </div>
+                </div> -->
+
+                <div class="form-inner">
+                    <input type="email" placeholder="Введите электронную почту">
+                    <input type="password" placeholder="Введите пароль">
                 </div>
             
                 <!-- <div class="main_button">
@@ -33,23 +38,39 @@
                         </div>
                     </a>
                 </div> -->
-            
-                <a href="#" class="main_but">Войти в аккаунт</a>
+
+        
+                <div class="container_social">
+                    <a class="forgot_pass" href="./forgotPass.html">Забыли пароль?</a>
+                    
+                    <a href="#" class="main_but">Войти</a>
+
+                    <div class="socials">
+                        <!-- <p class="socials_p">Войдите через:</p> -->
+                        <a class="vk" href="#">
+                            <img src="../assets/img/icons8-vk-в-круге.svg" class="socials_img" alt="google">
+                        </a>
+                        <a class="google" href="#">
+                            <img src="../assets/img/icons8-google.svg" class="socials_img" alt="vk">
+                        </a>
+                    </div>
+                </div>
+                <!-- <a href="#" class="main_but">Войти</a> -->
             </form>
         
-            <div class="container_social">
+            <!-- <div class="container_social">
                 <a class="forgot_pass" href="./forgotPass.html">Забыли пароль?</a>
         
                 <div class="socials">
                     <p class="socials_p">Войдите через:</p>
                     <a class="vk" href="#">
-                        <img src="../assets/img/icons8-vk-в-круге.svg" alt="google">
+                        <img src="../assets/img/icons8-vk-в-круге.svg" class="socials_img" alt="google">
                     </a>
                     <a class="google" href="#">
-                        <img src="../assets/img/icons8-google.svg" alt="vk">
+                        <img src="../assets/img/icons8-google.svg" class="socials_img" alt="vk">
                     </a>
                 </div>
-            </div>
+            </div> -->
         
             <p class="registration">Впервые на Юри.тех? <a href="./newAcc.html">Зарегистрироваться</a></p>
         </div>
