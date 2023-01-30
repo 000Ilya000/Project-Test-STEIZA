@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/Button.css'
 import styled from 'styled-components';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import Main from '../pages/main';
+import Main from './main';
 
 const MainBut = styled.a`
     .main_but {
@@ -24,27 +24,16 @@ const MainBut = styled.a`
         background: #416074;
     }
 `
+
+function Button () {
+    return (
+        <div>
+            <MainBut>
+                <Link to = "/Main" className='main_but'>Войти в аккаунт</Link>
+            </MainBut>
+        </div>
+    )
+}
   
 
-class Button extends Component {
-    render() {
-        return (
-            <div>
-                <MainBut>
-                        <a href="./pages/main.jsx" class="main_but">Войти в аккаунт</a>
-                </MainBut>
-
-                {/* <Router>
-                    <Route exact path="/" component={Button}/>
-                    <Route exact path="/main" component={Main}/>
-                </Router> */}
-            </div>
-        );
-    }
-}
-
 export default Button;
-
-{/* <Router>
-    <Route exact path="/main" component={Main}/>
-</Router> */}
