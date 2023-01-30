@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Button from './Components/Button';
 import styled, {createGlobalStyle} from 'styled-components';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";
 import Main from './pages/main';
 
 const Global = createGlobalStyle`
@@ -17,11 +17,19 @@ const Global = createGlobalStyle`
 
 function App() {
   return (
-    <div className="App">
+  <>
+    {/* <div className="App"> */}
         <Global></Global>
         <Button>
+          <Link to="/Main"></Link>
         </Button>
-    </div>
+    {/* </div> */}
+
+    {/* <Router>
+      <Route path="/" component={<Button />}/>
+      <Route path="/Main" component={<Main />}/>
+    </Router> */}
+  </>
   );
 }
 

@@ -31,8 +31,13 @@ class Button extends Component {
         return (
             <div>
                 <MainBut>
-                    <a href="./pages/main.jsx" class="main_but">Войти в аккаунт</a>
+                        <a href="./pages/main.jsx" class="main_but">Войти в аккаунт</a>
                 </MainBut>
+
+                {/* <Router>
+                    <Route exact path="/" component={Button}/>
+                    <Route exact path="/main" component={Main}/>
+                </Router> */}
             </div>
         );
     }
