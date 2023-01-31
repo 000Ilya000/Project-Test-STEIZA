@@ -12,35 +12,37 @@ function Main() {
             <Global></Global>
             <Container>
                 <Logo>
-                    <Link to = "/" className="container_logo">
-                        <img className="img_logo" src={logo} alt="logo"></img>
+                    <Link to = "/">
+                        <img src={logo} alt="logo"></img>
                     </Link>
                 </Logo>
-                <H1 className="main_title">Войдите в ваш аккаунт</H1>
+                    <Title>Войдите в ваш аккаунт</Title>
 
-                <MainForm className="main_form">
-                    <FormInner className="form-inner">
+                <MainForm>
+                    <FormInner>
                         <Input type="email" placeholder="Введите электронную почту"></Input>
                         <Input type="password" placeholder="Введите пароль"></Input>
                     </FormInner>
             
-                    <ContainerSocial className='container_social'>
-                        <Link to = "/ForgotPass" className="forgot_pass">Забыли пароль?</Link>
+                    <ContainerSocial>
+                        <ForgotPass>
+                            <Link to = "/ForgotPass">Забыли пароль?</Link>
+                        </ForgotPass>
                         
                         <Link to = "#" className="main_but">Войти</Link>
                         
-                        <Socials className="socials">
-                            <Link className="vk" to = "#">
-                                <img src={google} className="socials_img" alt="google"></img>
+                        <Socials>
+                            <Link to = "#">
+                                <img src={google} alt="google"></img>
                             </Link>
-                            <Link className="google" to = "#">
-                                <img src={vk} className="socials_img" alt="vk"></img>
+                            <Link to = "#">
+                                <img src={vk} alt="vk"></img>
                             </Link>
                         </Socials>
                     </ContainerSocial>
                 </MainForm>
-                
-                <P className="registration">Впервые на Юри.тех? <Link to = "/NewAcc">Зарегистрироваться</Link></P>
+
+                <P>Впервые на Юри.тех? <Link to = "/NewAcc">Зарегистрироваться</Link></P>
             </Container>
         </>
     )
@@ -87,78 +89,37 @@ const Global = createGlobalStyle`
             width: 100%;
             max-width: 100%;
         }
-
-        .forgot_pass {
-            order: 1;
-            display: flex;
-            margin-top: 10px;
-        }
-
-        .socials {
-            order: 1;
-            justify-content: center
-        }
-
-        .registration {
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .registration a {
-            margin-top: 8px;
-        }
-
-        .form-inner {
-            max-width: 90%;
-        }
-
-        .container_social {
-            max-width: 90%;
-            flex-direction: column;
-        }
-
-        .main_title {
-            display: flex;
-            justify-content: center;
-            font-size: x-large;
-        }
-            
     }
 
     @media (max-width: 370px) {
-        .form-inner {
-            max-width: 80%;
-        }
-
         .main_but {
             width: 90%;
             max-width: 100%;
         }
     }
-
-    @media (max-width: 321px) {
-        .main_title {
-            font-size: larger;
-        }
-    }
 `;
 
-const H1 = styled.h1`
+const Title = styled.h1`
     display: flex;
     justify-content: center;
     font-family: 'AvenirNextBold';
     margin-top: 26px;
     color: #416074;
     font-size: 24px;
+
+    @media (max-width: 420px) {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;  
+    };
 `;
 
 const Logo = styled.div`
-    .container_logo {
+    a:first-child {
         justify-content: center;
         display: flex;
     };
-
-    .img_logo {
+    img {
         max-height: 90px;
     }
 `;
@@ -187,10 +148,9 @@ const ContainerSocial = styled.div`
     width: 100%;
     justify-content: space-between;
 
-    .forgot_pass  {
-        color: #416074;
-        min-width: 109px;
-        font-size: 14px;
+    @media (max-width: 420px) {
+        max-width: 90%;
+        flex-direction: column;       
     }
 `;
 
@@ -199,6 +159,14 @@ const FormInner = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    @media (max-width: 420px) {
+        max-width: 90%;      
+    }
+
+    @media (max-width: 370px) {
+        max-width: 80%;
+    }
 `;
 
 const Input = styled.input`
@@ -219,8 +187,13 @@ const Socials = styled.div`
     min-width: 109px;
     justify-content: space-between;
 
-    .socials_img {
+    img {
         max-width: 40px;
+    }
+
+    @media (max-width: 420px) {
+        order: 1;
+        justify-content: center;
     }
 `;
 
@@ -235,5 +208,29 @@ const P = styled.p`
 
     a{
         color: #416074;
+    }
+
+    @media (max-width: 420px) {
+
+        align-items: center;
+        flex-direction: column;
+
+         a {
+            margin-top: 8px;
+        }    
+    }
+`;
+
+const ForgotPass = styled.div`
+    a {
+        color: #416074;
+        min-width: 109px;
+        font-size: 14px
+    };
+
+    @media (max-width: 420px) {
+        order: 1;
+        display: flex;
+        margin-top: 10px;
     }
 `;
