@@ -10,48 +10,48 @@ function NewAcc() {
     return (
         <>
             <Global></Global>
-            <NewAccStyle>
-                    <MainSection>
-                        <Container className="container">
-                            <Link to = "/" className="container_logo">
-                                <img className="img_logo" src={logo} alt="logo"></img>
-                            </Link>
-                            <h1 className="main_title">Создайте новый аккаунт</h1>
-                        
-                            <MainForm className="main_form">
+            <MainSection>
+                <Container className="container">
+                    <Logo>
+                        <Link to = "/" className="container_logo">
+                            <img className="img_logo" src={logo} alt="logo"></img>
+                        </Link>
+                    </Logo>
+                    <H1 className="main_title">Создайте новый аккаунт</H1>
+                
+                    <MainForm className="main_form">
 
-                                <FormInner className="form-inner">
-                                    <Input type="email" placeholder="Электронная почта"></Input>
-                                    <Input type="password" placeholder="Пароль"></Input>
-                                    <Input className="last_input" type="password" placeholder="Повторите пароль"></Input>
-                                </FormInner>
+                        <FormInner className="form-inner">
+                            <Input type="email" placeholder="Электронная почта"></Input>
+                            <Input type="password" placeholder="Пароль"></Input>
+                            <Input className="last_input" type="password" placeholder="Повторите пароль"></Input>
+                        </FormInner>
 
-                                <AgreeCondit className="agree-condit">
-                                    <InputCheckbox className="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo"></InputCheckbox>
-                                    <p>Я согласен с <Link to ="#">Условиями</Link> и <Link to = "#">Политикой Конфиденциальности</Link></p>
-                                </AgreeCondit>
+                        <AgreeCondit className="agree-condit">
+                            <InputCheckbox className="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo"></InputCheckbox>
+                            <p>Я согласен с <Link to ="#">Условиями</Link> и <Link to = "#">Политикой Конфиденциальности</Link></p>
+                        </AgreeCondit>
 
-                                <ContainerSocial className='container_social'>
-                                    <Link to = "/ForgotPass" className="forgot_pass">Забыли пароль?</Link>
-                                    
-                                    <Link to = "#" className="main_but">Зарегестрироваться</Link>
-                                    
-                                    <Socials className="socials">
-                                        <Link className="vk" to = "#">
-                                            <img src={google} className="socials_img" alt="google"></img>
-                                        </Link>
-                                        <Link className="google" to = "#">
-                                            <img src={vk} className="socials_img" alt="vk"></img>
-                                        </Link>
-                                    </Socials>
-                                </ContainerSocial>
+                        <ContainerSocial className='container_social'>
+                            <Link to = "/ForgotPass" className="forgot_pass">Забыли пароль?</Link>
+                            
+                            <Link to = "#" className="main_but">Зарегестрироваться</Link>
+                            
+                            <Socials className="socials">
+                                <Link className="vk" to = "#">
+                                    <img src={google} className="socials_img" alt="google"></img>
+                                </Link>
+                                <Link className="google" to = "#">
+                                    <img src={vk} className="socials_img" alt="vk"></img>
+                                </Link>
+                            </Socials>
+                        </ContainerSocial>
 
-                            </MainForm>
-                        
-                            <p className="registration">У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></p>
-                        </Container>
-                    </MainSection>
-            </NewAccStyle>
+                    </MainForm>
+                
+                    <P className="registration">У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></P>
+                </Container>
+            </MainSection>
         </>
     )
 }
@@ -63,96 +63,11 @@ const Global = createGlobalStyle`
     html {
         min-width:350px
     }
-`;
 
-const NewAccStyle = styled.div`  
-    .container_logo {
-        justify-content: center;
-        display: flex;
-    }
-
-    .img_logo {
-        max-height: 90px;
-    }
-
-    .main_title {
-        display: flex;
-        justify-content: center;
-    }
-
-    h1 {
-        font-family: 'AvenirNextBold';
-        margin-top: 26px;
-        color: #416074;
-    }
-
-    a.text:active,
-    a.text:hover, 
-    a {
-    text-decoration: none;
-    }
-
-    .main_but {
-        font-weight: 700;
+    p, a{
+        font-family: 'AvenirNextRegular';
         text-decoration: none;
-        padding: 10px 20px;
-        user-select: none;
-        outline: none;
-        border-radius: 10px;
-        transition: 0.4s;
-        color: white;
-        font-family: 'AvenirNextRegular';
-        font-size: 14px;
-        background: #428EC0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .main_but:hover {
-        background: #416074;
-    }
-
-    .p_login {
-        color: white;
-        font-family: 'AvenirNextRegular';   
-        font-size: 14px;
-    }
-
-    .socials p {
-        margin-right: 10px;
-        font-family: 'AvenirNextRegular';
-        color: #414243;
-    }
-
-    .forgot_pass {
-        font-family: 'AvenirNextRegular';
-        font-size: 14px;
-        min-width: 109px;
-    }
-
-    .forgot_pass  {
-        color: #416074;
-    }
-
-    .socials_img {
-        max-width: 40px;
-    }
-
-    .registration {
-        display: flex;
-        justify-content: center;
-        font-family: 'AvenirNextRegular';
-        color: #414243;
-        font-size: 14px;
-        width: 60%;
-        justify-content: space-evenly;
-    }
-
-
-    .registration a {
-        color: #416074;
-    }
+    };
 
     @media (max-width: 480px) {
         .main_but {
@@ -256,6 +171,27 @@ const MainForm = styled.form`
     flex-direction: column;
     justify-content: center;
     width: 100%;
+
+    .main_but {
+        font-weight: 700;
+        text-decoration: none;
+        padding: 10px 20px;
+        user-select: none;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.4s;
+        color: white;
+        font-family: 'AvenirNextRegular';
+        font-size: 14px;
+        background: #428EC0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main_but:hover {
+        background: #416074;
+    }
 `;
 
 const FormInner = styled.div`
@@ -310,6 +246,13 @@ const ContainerSocial = styled.div`
     align-items: center;
     width: 100%;
     justify-content: space-between;
+
+    .forgot_pass {
+        font-family: 'AvenirNextRegular';
+        font-size: 14px;
+        min-width: 109px;
+        color: #416074;
+    }
 `;
 
 const Socials = styled.div`
@@ -318,4 +261,41 @@ const Socials = styled.div`
     font-size: 14px;
     min-width: 109px;
     justify-content: space-between;
+
+    .socials_img {
+        max-width: 40px;
+    }
+`;
+
+const Logo = styled.div`
+    .container_logo {
+        justify-content: center;
+        display: flex;
+    };
+
+    .img_logo {
+        max-height: 90px;
+    }
+`;
+
+const H1 = styled.h1`
+    display: flex;
+    justify-content: center;
+    font-family: 'AvenirNextBold';
+    margin-top: 26px;
+    color: #416074;
+`;
+
+const P = styled.p`
+    display: flex;
+    justify-content: center;
+    font-family: 'AvenirNextRegular';
+    color: #414243;
+    font-size: 14px;
+    width: 60%;
+    justify-content: space-evenly;
+
+    a{
+        color: #416074;
+    }
 `;
