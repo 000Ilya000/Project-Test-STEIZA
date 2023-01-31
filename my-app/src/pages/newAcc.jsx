@@ -6,6 +6,7 @@ import google from '../assets/img/icons8-google.svg'
 import vk from '../assets/img/icons8-vk-в-круге.svg'
 
 
+
 function NewAcc() {
     return (
         <>
