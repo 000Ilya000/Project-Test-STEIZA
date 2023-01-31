@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+import './assets/css/App.css';
 import Button from './pages/Button';
 import styled, {createGlobalStyle} from 'styled-components';
 import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";

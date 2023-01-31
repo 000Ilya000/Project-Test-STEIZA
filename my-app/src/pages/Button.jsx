@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../assets/css/Button.css'
 import styled from 'styled-components';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Main from './main';
