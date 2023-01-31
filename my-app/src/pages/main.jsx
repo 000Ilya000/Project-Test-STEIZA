@@ -1,54 +1,70 @@
 import React, { Component } from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
-import logo from '../assets/img/Logo.jpg'
-import google from '../assets/img/icons8-google.svg'
-import vk from '../assets/img/icons8-vk-в-круге.svg'
-import Button from './Button';
+import logo from '../assets/img/Logo.jpg';
+import google from '../assets/img/icons8-google.svg';
+import vk from '../assets/img/icons8-vk-в-круге.svg';
 import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";
-import ForgotPass from './forgotPass';
+
+
+function Main() {
+    return (
+        <>
+            <Global></Global>
+            <MainStyle>
+                <Container>
+                    <Link to = "/" className="container_logo">
+                        <img className="img_logo" src={logo} alt="logo"></img>
+                    </Link>
+                    <h1 className="main_title">Войдите в ваш аккаунт</h1>
+
+                    <MainForm className="main_form">
+                        <FormInner className="form-inner">
+                            <Input type="email" placeholder="Введите электронную почту"></Input>
+                            <Input type="password" placeholder="Введите пароль"></Input>
+                        </FormInner>
+                
+                        <ContainerSocial className='container_social'>
+                            <Link to = "/ForgotPass" className="forgot_pass">Забыли пароль?</Link>
+                            
+                            <Link to = "#" className="main_but">Войти</Link>
+                            
+                            <Socials className="socials">
+                                <Link className="vk" to = "#">
+                                    <img src={google} className="socials_img" alt="google"></img>
+                                </Link>
+                                <Link className="google" to = "#">
+                                    <img src={vk} className="socials_img" alt="vk"></img>
+                                </Link>
+                            </Socials>
+                        </ContainerSocial>
+                    </MainForm>
+                                                    
+                    <p className="registration">Впервые на Юри.тех? <Link to = "/NewAcc">Зарегистрироваться</Link></p>
+                </Container>
+            </MainStyle>
+        </>
+    )
+}
+
+
+export default Main;
+
 
 const Global = createGlobalStyle`
     html {
         min-width:350px
     }
-`
+`;
 
 const MainStyle = styled.div`
-
-    section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        width: 100%;
-    }
-
-    .container {
-        min-width: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
     p, a {
         font-size: 14px;
-    }
-
-    .main_form {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        align-items: center
-    }
+    };
 
     .container_logo {
         justify-content: center;
         display: flex;
-        /* margin-top: 100px; */
-    }
+    };
 
     .img_logo {
         max-height: 90px;
@@ -63,160 +79,7 @@ const MainStyle = styled.div`
         font-family: 'AvenirNextBold';
         margin-top: 26px;
         color: #416074;
-    }
-
-    /* .container_inputs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #B3B3B4;
-    }
-
-    .ui-form {
-        max-width: 350px;
-        max-width: 100%;
-        padding: 80px 30px 30px;
-        margin: 50px auto 30px;
-        background: white;
-    }
-    .ui-form h3 {
-        position: relative;
-        z-index: 5;
-        margin: 0 0 60px;
-        text-align: center;
-        color: #428EC0;
-        font-size: 30px;
-        font-weight: normal;
-    }
-    .ui-form h3:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 60px;
-        top: -30px;
-        width: 100px;
-        width: 100%;
-        height: 100px;
-        border-radius: 50%;
-        background: #416074;
-    }
-    .ui-form h3:after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        right: 50px;
-        top: -40px;
-        width: 0;
-        height: 0;
-        border-left: 55px solid transparent;
-        border-right: 55px solid transparent;
-        border-bottom: 90px solid #416074;
-    }
-    .form-row {
-        position: relative;
-        margin-bottom: 40px;
-        width: -webkit-fill-available;
-        font-family: 'AvenirNextRegular';
-        display: flex;
-        align-items: center;
-        color: #B3B3B4;
-    }
-    .form-row input {
-        padding-left: 20px;
-        padding-right: 0px;
-        display: block;
-        display: flex;
-        width: 100%;
-        line-height: 40px;
-        font-family: 'AvenirNextRegular', sans-serif;
-        background: none;
-        border-width: 2px;
-        border-radius: 20px;
-        border-color: #B3B3B4;  
-        border-bottom: 2px solid #428EC0;
-        transition: all 0.2s ease;
-    }
-
-    .form-row label {
-        position: absolute;
-        left: 22px;
-        color: #B3B3B4;
-        font-size: 12px;
-        font-weight: 300;
-        transform: translateY(-35px);
-        transition: all 0.2s ease;
-        cursor: text;
-    }
-    .form-row input:focus {
-        outline: 0;
-        border-color: #416074;
-    }
-    .form-row input:focus+label, .form-row input:valid+label {
-        transform: translateY(-38px);
-        margin-left: -14px;
-        font-size: 10px;
-        font-weight: 400;
-        outline: 0;
-        border-color: #416074;
-        color: #416074;
-        cursor: default;
-    }
-    .ui-form input[type="submit"] {
-        width: 100%;
-        padding: 0;
-        line-height: 42px;
-        background: #428EC0;
-        border-width: 0;
-        color: white;
-        font-size: 20px;
-    }
-    .ui-form p {
-        margin: 0;
-        padding-top: 10px;
-    } */
-
-    .form-inner {
-        /* padding: 50px; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .form-inner input {
-        /* display: block; */
-        width: 100%;
-        padding: 0 20px;
-        margin-bottom: 20px;
-        /* background: #E9EFF6; */
-        line-height: 50px;
-        /* border-width: 1px; */
-        border-radius: 40px;
-        border: 1px solid rgba(65, 66, 67, 0.6);
-        font-family: 'AvenirNextRegular', sans-serif;
-        outline-color: rgba(66, 142, 192, 0.4);
-        caret-color: rgba(66, 142, 192);
-    }
-
-    /* .form-inner input[type="submit"] {
-        margin-top: 30px;
-        background: #f69a73;
-        border-bottom: 4px solid #d87d56;
-        color: white;
-        border-color: #416074;
-        font-size: 14px;
-    } */
-    /* .form-inner textarea {
-        resize: none;
-    } */
-    /* .form-inner h3 {
-        margin-top: 0;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 24px;
-        color: #707981;
-    } */
-
+    };
 
     .main_but {
         font-weight: 700;
@@ -245,32 +108,7 @@ const MainStyle = styled.div`
     a.text:hover, 
     a {
     text-decoration: none;
-    }
-
-    /* .main_button {
-        display: flex;
-        justify-content: center;
-    }
-
-    .container_button {
-        display: flex;
-        justify-content: center;
-    }
-
-
-    .button {
-        display: inline-block;
-        font-weight: 700;
-        text-decoration: none;
-        user-select: none;
-        padding: .1em 10em;
-        outline: none;
-        border-radius: 10px;
-        transition: 0.4s;
-    }
-
-    .button { background: #428EC0; }
-    .button:hover { background: #416074; } */
+    };
 
     .p_login {
         color: white;
@@ -278,18 +116,7 @@ const MainStyle = styled.div`
         font-size: 14px;
     }
 
-
-    .container_social {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* margin-top: 10px; */
-        width: 100%;
-        justify-content: space-between;
-    }
-
     .forgot_pass {
-        /* margin-right: 60px; */
         font-family: 'AvenirNextRegular';
     }
 
@@ -302,14 +129,6 @@ const MainStyle = styled.div`
         margin-right: 10px;
         font-family: 'AvenirNextRegular';
         color: #414243;
-    }
-
-    .socials {
-        display: flex;
-        align-items: center;
-        /* width: 100%; */
-        min-width: 109px;
-        justify-content: space-between;
     }
 
     .socials_img {
@@ -328,17 +147,12 @@ const MainStyle = styled.div`
         font-family: 'AvenirNextRegular';
         color: #414243;
         font-size: 14px;
-        /* align-items: center;
-        flex-direction: column; */
-        /* margin-top: 30px; */
         width: 100%;
         justify-content: space-evenly;
     }
 
     .registration a{
         color: #416074;
-        /* margin-top: 10px; */
-
     }
 
     @media (max-width: 420px) {
@@ -348,7 +162,6 @@ const MainStyle = styled.div`
         }
 
         .forgot_pass {
-            /* font-size: 12px; */
             order: 1;
             display: flex;
             margin-top: 10px;
@@ -397,59 +210,59 @@ const MainStyle = styled.div`
     }
 
     @media (max-width: 321px) {
-        /* .main_but {
-            padding-right: 60px;
-            padding-left: 60px;
-        } */
-
         .main_title {
             font-size: larger;
         }
     }
-`
+`;
 
-function Main() {
-    return (
-        <>
-            <Global></Global>
-            <MainStyle>
-                <div className="container">
-                    <Link to = "/" className="container_logo">
-                        <img className="img_logo" src={logo} alt="logo"></img>
-                    </Link>
-                    {/* <a className="container_logo" ><img className="img_logo" src={logo} alt="logo"></img></a> */}
-                    <h1 className="main_title">Войдите в ваш аккаунт</h1>
-                
-                    <form action="" className="main_form">
+const Container = styled.div`
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
 
-                        <div className="form-inner">
-                            <input type="email" placeholder="Введите электронную почту"></input>
-                            <input type="password" placeholder="Введите пароль"></input>
-                        </div>
-                
-                        <div className="container_social">
-                            <Link to = "/ForgotPass" className="forgot_pass">Забыли пароль?</Link>
-                            {/* <a className="forgot_pass" href="./forgotPass.html">Забыли пароль?</a> */}
-                            
-                            <Link to = "#" className="main_but">Войти</Link>
-                            
-                            <div className="socials">
-                                <Link className="vk" to = "#">
-                                    <img src={google} className="socials_img" alt="google"></img>
-                                </Link>
-                                <Link className="google" to = "#">
-                                    <img src={vk} className="socials_img" alt="vk"></img>
-                                </Link>
-                            </div>
-                        </div>
-                    </form>
-                
-                    <p className="registration">Впервые на Юри.тех? <Link to = "/NewAcc">Зарегистрироваться</Link></p>
-                </div>
-            </MainStyle>
-        </>
-    )
-}
+const MainForm = styled.form`
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+`;
 
+const ContainerSocial = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+`;
 
-export default Main;
+const FormInner = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+`;
+
+const Input = styled.input`
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    line-height: 50px;
+    border-radius: 40px;
+    border: 1px solid rgba(65, 66, 67, 0.6);
+    font-family: 'AvenirNextRegular', sans-serif;
+    outline-color: rgba(66, 142, 192, 0.4);
+    caret-color: rgba(66, 142, 192);
+`;
+
+const Socials = styled.div`
+    display: flex;
+    align-items: center;
+    min-width: 109px;
+    justify-content: space-between;
+`;

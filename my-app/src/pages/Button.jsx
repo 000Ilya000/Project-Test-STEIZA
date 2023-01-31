@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import Main from './main';
 
-const MainBut = styled.a`
+
+function Button () {
+    return (
+        <div>
+            <MainBut>
+                <Link to = "/Main" className='main_but'>Войти в аккаунт</Link>
+            </MainBut>
+        </div>
+    )
+}
+  
+
+export default Button;
+
+
+const MainBut = styled.div`
     .main_but {
         display: flex;
         font-weight: 700;
@@ -22,17 +36,4 @@ const MainBut = styled.a`
     .main_but:hover {
         background: #416074;
     }
-`
-
-function Button () {
-    return (
-        <div>
-            <MainBut>
-                <Link to = "/Main" className='main_but'>Войти в аккаунт</Link>
-            </MainBut>
-        </div>
-    )
-}
-  
-
-export default Button;
+`;
