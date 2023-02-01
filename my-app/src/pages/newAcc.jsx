@@ -12,45 +12,47 @@ function NewAcc() {
         <>
             <Global></Global>
             <MainSection>
-                <Container className="container">
+                <Container>
                     <Logo>
-                        <Link to = "/" className="container_logo">
-                            <img className="img_logo" src={logo} alt="logo"></img>
+                        <Link to = "/">
+                            <img src={logo} alt="logo"></img>
                         </Link>
                     </Logo>
-                    <H1 className="main_title">Создайте новый аккаунт</H1>
+                    <Title>Создайте новый аккаунт</Title>
                 
-                    <MainForm className="main_form">
+                    <MainForm>
 
-                        <FormInner className="form-inner">
+                        <FormInner>
                             <Input type="email" placeholder="Электронная почта"></Input>
                             <Input type="password" placeholder="Пароль"></Input>
                             <Input className="last_input" type="password" placeholder="Повторите пароль"></Input>
                         </FormInner>
 
-                        <AgreeCondit className="agree-condit">
-                            <InputCheckbox className="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo"></InputCheckbox>
+                        <AgreeCondit>
+                            <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"></InputCheckbox>
                             <p>Я согласен с <Link to ="#">Условиями</Link> и <Link to = "#">Политикой Конфиденциальности</Link></p>
                         </AgreeCondit>
 
-                        <ContainerSocial className='container_social'>
-                            <Link to = "/ForgotPass" className="forgot_pass">Забыли пароль?</Link>
+                        <ContainerSocial>
+                            <ForgotPass>
+                            <Link to = "/ForgotPass">Забыли пароль?</Link>
+                            </ForgotPass>
                             
                             <Link to = "#" className="main_but">Зарегестрироваться</Link>
                             
-                            <Socials className="socials">
-                                <Link className="vk" to = "#">
-                                    <img src={google} className="socials_img" alt="google"></img>
+                            <Socials>
+                                <Link to = "#">
+                                    <img src={google} alt="google"></img>
                                 </Link>
-                                <Link className="google" to = "#">
-                                    <img src={vk} className="socials_img" alt="vk"></img>
+                                <Link to = "#">
+                                    <img src={vk} alt="vk"></img>
                                 </Link>
                             </Socials>
                         </ContainerSocial>
 
                     </MainForm>
                 
-                    <P className="registration">У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></P>
+                    <P>У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></P>
                 </Container>
             </MainSection>
         </>
@@ -74,78 +76,12 @@ const Global = createGlobalStyle`
         .main_but {
             width: 100%;
         }
-
-        .registration {
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .forgot_pass {
-            order: 1;
-            display: flex;
-            margin-top: 10px;
-        }
-
-        .registration a {
-            margin-top: 8px;
-        }
-
-        .socials {
-            order: 1;
-            justify-content: center
-        }
-
-        .main_form {
-            align-items: center;
-        }
-
-        .form-inner {
-            max-width: 90%;
-        }
-
-        .container_social {
-            max-width: 90%;
-            flex-direction: column;
-        }
-
-        .main_title {
-            display: flex;
-            justify-content: center;
-            font-size: x-large;
-        }
-
-        .main_title {
-            display: flex;
-            justify-content: center;
-            font-size: x-large;
-        }
-
-        .agree-condit p {
-            font-size: 12px;
-        }
-
-        .agree-condit p {
-            font-size: 12px;
-        }
     }
 
     @media (max-width: 375px) {
-        .agree-condit p {
-            font-size: 11px;
-        }
-
-        .form-inner {
-            max-width: 80%;
-        }
 
         .main_but {
             width: 90%;
-        }
-    }
-
-    @media (max-width: 321px) {
-        .main_title {
-            font-size: larger;
         }
     }
 `;
@@ -193,6 +129,10 @@ const MainForm = styled.form`
     .main_but:hover {
         background: #416074;
     }
+
+    @media (max-width: 480px) {
+        align-items: center;
+    }
 `;
 
 const FormInner = styled.div`
@@ -203,6 +143,14 @@ const FormInner = styled.div`
 
     .last_input {
         margin-bottom: 0;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 90%;
+    }
+
+    @media (max-width: 375px) {
+        max-width: 80%;
     }
 `;
 
@@ -239,6 +187,22 @@ const AgreeCondit = styled.div`
     a {
         color: #416074;
     }
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        font-size: 11px;
+
+        p {
+            font-size: 11px;
+        }
+    }
 `;
 
 const ContainerSocial = styled.div`
@@ -248,11 +212,9 @@ const ContainerSocial = styled.div`
     width: 100%;
     justify-content: space-between;
 
-    .forgot_pass {
-        font-family: 'AvenirNextRegular';
-        font-size: 14px;
-        min-width: 109px;
-        color: #416074;
+    @media (max-width: 480px) {
+        max-width: 90%;
+        flex-direction: column;
     }
 `;
 
@@ -263,28 +225,39 @@ const Socials = styled.div`
     min-width: 109px;
     justify-content: space-between;
 
-    .socials_img {
+    img {
         max-width: 40px;
+    }
+
+    @media (max-width: 480px) {
+        order: 1;
+        justify-content: center
     }
 `;
 
 const Logo = styled.div`
-    .container_logo {
+    a {
         justify-content: center;
         display: flex;
     };
 
-    .img_logo {
+    img {
         max-height: 90px;
     }
 `;
 
-const H1 = styled.h1`
+const Title = styled.h1`
     display: flex;
     justify-content: center;
     font-family: 'AvenirNextBold';
     margin-top: 26px;
     color: #416074;
+
+    @media (max-width: 480px) {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
 `;
 
 const P = styled.p`
@@ -298,5 +271,28 @@ const P = styled.p`
 
     a{
         color: #416074;
+    }
+
+    @media (max-width: 480px) {
+        align-items: center;
+        flex-direction: column;
+
+        a {
+            margin-top: 8px;
+        }
+    }
+`;
+
+const ForgotPass = styled.div`
+    a {
+        color: #416074;
+        min-width: 109px;
+        font-size: 14px
+    };
+
+    @media (max-width: 480px) {
+        order: 1;
+        display: flex;
+        margin-top: 10px;
     }
 `;
