@@ -29,8 +29,10 @@ function NewAcc() {
                     </FormInner>
 
                     <AgreeCondit>
-                        <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"/>
-                        <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
+                        <label for="color-1">
+                            <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"/>
+                            <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
+                        </label>
                     </AgreeCondit>
 
                     <ContainerSocial>
@@ -166,6 +168,10 @@ const AgreeCondit = styled.div`
     margin-top: 8px;
     justify-content: center;
     margin-bottom: 8px;
+
+    label {
+        display: flex;
+    }
 
     p {
         font-family: 'AvenirNextRegular';   
