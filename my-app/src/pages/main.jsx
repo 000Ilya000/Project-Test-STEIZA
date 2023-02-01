@@ -9,19 +9,18 @@ import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";
 function Main() {
     return (
         <>
-            <Global></Global>
-            <Container>
+            <Global/>
+            <MainContainer>
                 <Logo>
                     <Link to = "/">
                         <img src={logo} alt="logo"></img>
                     </Link>
                 </Logo>
                     <Title>Войдите в ваш аккаунт</Title>
-
                 <MainForm>
                     <FormInner>
-                        <Input type="email" placeholder="Введите электронную почту"></Input>
-                        <Input type="password" placeholder="Введите пароль"></Input>
+                        <EntryField type="email" placeholder="Введите электронную почту"/>
+                        <EntryField type="password" placeholder="Введите пароль"/>
                     </FormInner>
             
                     <ContainerSocial>
@@ -29,21 +28,21 @@ function Main() {
                             <Link to = "/ForgotPass">Забыли пароль?</Link>
                         </ForgotPass>
                         
-                        <Link to = "#" className="main_but">Войти</Link>
+                        <Link to = "/" className="main_but">Войти</Link>
                         
                         <Socials>
-                            <Link to = "#">
+                            <Link to = "/">
                                 <img src={google} alt="google"></img>
                             </Link>
-                            <Link to = "#">
+                            <Link to = "/">
                                 <img src={vk} alt="vk"></img>
                             </Link>
                         </Socials>
                     </ContainerSocial>
                 </MainForm>
 
-                <P>Впервые на Юри.тех? <Link to = "/NewAcc">Зарегистрироваться</Link></P>
-            </Container>
+                <Regist>Впервые на Юри.тех? <Link to = "/NewAcc">Зарегистрироваться</Link></Regist>
+            </MainContainer>
         </>
     )
 }
@@ -124,7 +123,7 @@ const Logo = styled.div`
     }
 `;
 
-const Container = styled.div`
+const MainContainer = styled.div`
     min-width: 350px;
     display: flex;
     align-items: center;
@@ -169,7 +168,7 @@ const FormInner = styled.div`
     }
 `;
 
-const Input = styled.input`
+const EntryField = styled.input`
     width: 100%;
     padding: 0 20px;
     margin-bottom: 20px;
@@ -197,7 +196,7 @@ const Socials = styled.div`
     }
 `;
 
-const P = styled.p`
+const Regist = styled.p`
     display: flex;
     justify-content: center;
     font-family: 'AvenirNextRegular';

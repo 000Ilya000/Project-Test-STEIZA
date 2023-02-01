@@ -10,9 +10,9 @@ import vk from '../assets/img/icons8-vk-в-круге.svg'
 function NewAcc() {
     return (
         <>
-            <Global></Global>
+            <Global/>
             <MainSection>
-                <Container>
+                <MainContainer>
                     <Logo>
                         <Link to = "/">
                             <img src={logo} alt="logo"></img>
@@ -23,14 +23,14 @@ function NewAcc() {
                     <MainForm>
 
                         <FormInner>
-                            <Input type="email" placeholder="Электронная почта"></Input>
-                            <Input type="password" placeholder="Пароль"></Input>
-                            <Input className="last_input" type="password" placeholder="Повторите пароль"></Input>
+                            <EntryField type="email" placeholder="Электронная почта"/>
+                            <EntryField type="password" placeholder="Пароль"/>
+                            <EntryField type="password" placeholder="Повторите пароль"/>
                         </FormInner>
 
                         <AgreeCondit>
-                            <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"></InputCheckbox>
-                            <p>Я согласен с <Link to ="#">Условиями</Link> и <Link to = "#">Политикой Конфиденциальности</Link></p>
+                            <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"/>
+                            <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
                         </AgreeCondit>
 
                         <ContainerSocial>
@@ -38,13 +38,13 @@ function NewAcc() {
                             <Link to = "/ForgotPass">Забыли пароль?</Link>
                             </ForgotPass>
                             
-                            <Link to = "#" className="main_but">Зарегестрироваться</Link>
+                            <Link to = "/" className="main_but">Зарегестрироваться</Link>
                             
                             <Socials>
-                                <Link to = "#">
+                                <Link to = "/">
                                     <img src={google} alt="google"></img>
                                 </Link>
-                                <Link to = "#">
+                                <Link to = "/">
                                     <img src={vk} alt="vk"></img>
                                 </Link>
                             </Socials>
@@ -52,8 +52,8 @@ function NewAcc() {
 
                     </MainForm>
                 
-                    <P>У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></P>
-                </Container>
+                    <LogIn>У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></LogIn>
+                </MainContainer>
             </MainSection>
         </>
     )
@@ -94,7 +94,7 @@ const MainSection = styled.section`
     width: 100%;
 `;
 
-const Container = styled.div`
+const MainContainer = styled.div`
     min-width: 350px;
     display: flex;
     align-items: center;
@@ -141,7 +141,7 @@ const FormInner = styled.div`
     align-items: center;
     width: 100%;
 
-    .last_input {
+    input:last-child {
         margin-bottom: 0;
     }
 
@@ -154,7 +154,7 @@ const FormInner = styled.div`
     }
 `;
 
-const Input = styled.input`
+const EntryField = styled.input`
     width: 100%;
     padding: 0 20px;
     margin-bottom: 20px;
@@ -260,7 +260,7 @@ const Title = styled.h1`
     }
 `;
 
-const P = styled.p`
+const LogIn = styled.p`
     display: flex;
     justify-content: center;
     font-family: 'AvenirNextRegular';

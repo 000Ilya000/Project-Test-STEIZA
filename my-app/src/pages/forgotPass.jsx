@@ -7,29 +7,29 @@ import logo from '../assets/img/Logo.jpg'
 function ForgotPass() {
     return (
         <>
-            <Global></Global>
+            <Global/>
             <MainSection>
-                <Container className="container">
+                <MainContainer>
                     <Logo>
-                        <Link to = "/" className="container_logo">
-                            <img className="img_logo" src={logo} alt="logo"></img>
+                        <Link to = "/">
+                            <img src={logo} alt="logo"></img>
                         </Link>
                     </Logo>
-                    <H1 className="main_title">Восстановление пароля</H1>
-                    
-
-                    <Form action="" className="main_form">
-                        <FormInner className="form-inner">
-                            <Input type="email" placeholder="Ваша почта"></Input>
+                    <Title>Восстановление пароля</Title>
+                    <MainForm>
+                        <FormInner>
+                            <EntryField type="email" placeholder="Ваша почта"/>
                         </FormInner>
 
-                        <Link to = "#" className="main_but">Отправить пароль на почту</Link>
-                    </Form>
+                        <Link to = "/" className="main_but">Отправить пароль на почту</Link>
+                    </MainForm>
 
-                    <Link to = "/Main" className="logIn" >Войти</Link>
+                    <LogIn>
+                        <Link to = "/Main" >Войти</Link>
+                    </LogIn>
                 
-                    <P className="regist">Еще не с нами?<Link to = "/NewAcc">Зарегистрируйтесь</Link></P>
-                </Container>
+                    <Regist>Еще не с нами?<Link to = "/NewAcc">Зарегистрируйтесь</Link></Regist>
+                </MainContainer>
             </MainSection>
         </>
     )
@@ -50,29 +50,12 @@ const Global = createGlobalStyle`
     };
 
     @media (max-width: 450px) {
-        .regist {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .main_title {
-            display: flex;
-            justify-content: center;
-            font-size: x-large;
-        }
-
         .agree-condit p {
             font-size: 12px;
         }
 
         .agree-condit p {
             font-size: 12px;
-        }
-    }
-
-    @media (max-width: 365px) {
-        .main_title {
-            font-size: larger;
         }
     }
 `;
@@ -85,24 +68,26 @@ const MainSection = styled.section`
     width: 100%;
 `;
 
-const Container = styled.div`
+const MainContainer = styled.div`
     max-width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-    .logIn {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        color: #416074;
-        font-family: 'AvenirNextRegular';
-        font-size: 14px;
-    }
 `;
 
-const Form = styled.form`
+const LogIn = styled.div`
+a {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #416074;
+    font-family: 'AvenirNextRegular';
+    font-size: 14px;
+}
+`;
+
+const MainForm = styled.form`
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -138,7 +123,7 @@ const FormInner = styled.div`
     width: 100%;
 `;
 
-const Input = styled.input`
+const EntryField = styled.input`
     width: 100%;
     padding: 0 20px;
     margin-bottom: 20px;
@@ -151,26 +136,32 @@ const Input = styled.input`
 `;
 
 const Logo = styled.div`
-    .container_logo {
+    a {
         justify-content: center;
         display: flex;
     };
 
-    .img_logo {
+    img {
         max-height: 90px;
     }
 `;
 
-const H1 = styled.h1`
+const Title = styled.h1`
     display: flex;
     justify-content: center;
     font-family: 'AvenirNextBold';
     margin-top: 26px;
     color: #416074;
     font-size: 24px;
+
+    @media (max-width: 420px) {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;  
+    };
 `;
 
-const P = styled.p`
+const Regist = styled.p`
     display: flex;
     justify-content: center;
     font-family: 'AvenirNextRegular';
@@ -181,5 +172,10 @@ const P = styled.p`
 
     a{
         color: #416074;
+    }
+
+    @media (max-width: 450px) {
+        flex-direction: column;
+        align-items: center;
     }
 `;
