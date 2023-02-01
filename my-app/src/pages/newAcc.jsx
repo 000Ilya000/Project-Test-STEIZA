@@ -10,67 +10,62 @@ import vk from '../assets/img/icons8-vk-в-круге.svg'
 function NewAcc() {
     return (
         <>
-            <Global/>
-            <MainSection>
-                <MainContainer>
-                    <Logo>
-                        <Link to = "/">
-                            <img src={logo} alt="logo"></img>
-                        </Link>
-                    </Logo>
-                    <Title>Создайте новый аккаунт</Title>
-                
-                    <MainForm>
+            <MainContainer>
+                <Logo>
+                    <Link to = "/">
+                        <img src={logo} alt="logo"></img>
+                    </Link>
+                </Logo>
+                <Title>Создайте новый аккаунт</Title>
+            
+                <MainForm>
 
-                        <FormInner>
-                            <EntryField type="email" placeholder="Электронная почта"/>
-                            <EntryField type="password" placeholder="Пароль"/>
-                            <EntryField type="password" placeholder="Повторите пароль"/>
-                        </FormInner>
+                    <FormInner>
+                        <label for="email">Электронная почта</label>
+                        <EntryField type="email" placeholder="Электронная почта"/>
+                        <label for="password">Пароль</label>
+                        <EntryField type="password" placeholder="Пароль"/>
+                        <EntryField type="password" placeholder="Повторите пароль"/>
+                    </FormInner>
 
-                        <AgreeCondit>
-                            <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"/>
-                            <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
-                        </AgreeCondit>
+                    <AgreeCondit>
+                        <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"/>
+                        <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
+                    </AgreeCondit>
 
-                        <ContainerSocial>
-                            <ForgotPass>
-                            <Link to = "/ForgotPass">Забыли пароль?</Link>
-                            </ForgotPass>
-                            
-                            <Link to = "/" className="main_but">Зарегестрироваться</Link>
-                            
-                            <Socials>
-                                <Link to = "/">
-                                    <img src={google} alt="google"></img>
-                                </Link>
-                                <Link to = "/">
-                                    <img src={vk} alt="vk"></img>
-                                </Link>
-                            </Socials>
-                        </ContainerSocial>
+                    <ContainerSocial>
+                        <ForgotPass>
+                        <Link to = "/ForgotPass">Забыли пароль?</Link>
+                        </ForgotPass>
+                        
+                        <Link to = "/" className="main_but">Зарегестрироваться</Link>
+                        
+                        <Socials>
+                            <Link to = "/">
+                                <img src={google} alt="google"></img>
+                            </Link>
+                            <Link to = "/">
+                                <img src={vk} alt="vk"></img>
+                            </Link>
+                        </Socials>
+                    </ContainerSocial>
 
-                    </MainForm>
-                
-                    <LogIn>У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></LogIn>
-                </MainContainer>
-            </MainSection>
+                </MainForm>
+            
+                <LogIn>У вас уже есть аккаунт? <Link to = "/Main">Войти</Link></LogIn>
+            </MainContainer>
         </>
     )
 }
 
 export default NewAcc;
 
-
-const Global = createGlobalStyle`
-    html {
-        min-width:350px
-    }
-
-    p, a{
-        font-family: 'AvenirNextRegular';
-        text-decoration: none;
-    };
+const MainContainer = styled.div`
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     @media (max-width: 480px) {
         .main_but {
@@ -84,22 +79,6 @@ const Global = createGlobalStyle`
             width: 90%;
         }
     }
-`;
-
-const MainSection = styled.section`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100%;
-`;
-
-const MainContainer = styled.div`
-    min-width: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 `;
 
 const MainForm = styled.form`
@@ -140,6 +119,16 @@ const FormInner = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    label {
+        display:flex;
+        display: flex;
+        justify-content: center;
+        font-family: 'AvenirNextBold';
+        color: #416074;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
 
     input:last-child {
         margin-bottom: 0;

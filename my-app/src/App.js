@@ -7,22 +7,12 @@ import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";
 import Main from './pages/main';
 import ForgotPass from './pages/forgotPass';
 import NewAcc from './pages/newAcc';
-
-const Global = createGlobalStyle`
-  body {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`
+import GlobalStyle from './assets/Styles/GlobalStyle';
 
 function App() {
   return (
   <>
-    <Global></Global>
-
+    <GlobalStyle/>
     <Router>
       <Routes>
         <Route path="/" element={<Button />}/>

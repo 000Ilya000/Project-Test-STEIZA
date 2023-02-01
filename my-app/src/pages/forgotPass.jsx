@@ -7,66 +7,34 @@ import logo from '../assets/img/Logo.jpg'
 function ForgotPass() {
     return (
         <>
-            <Global/>
-            <MainSection>
-                <MainContainer>
-                    <Logo>
-                        <Link to = "/">
-                            <img src={logo} alt="logo"></img>
-                        </Link>
-                    </Logo>
-                    <Title>Восстановление пароля</Title>
-                    <MainForm>
-                        <FormInner>
-                            <EntryField type="email" placeholder="Ваша почта"/>
-                        </FormInner>
+            <MainContainer>
+                <Logo>
+                    <Link to = "/">
+                        <img src={logo} alt="logo"></img>
+                    </Link>
+                </Logo>
+                <Title>Восстановление пароля</Title>
+                <MainForm>
+                    <FormInner>
+                        <label for="email">Электронная почта</label>
+                        <EntryField type="email" placeholder="Ваша почта"/>
+                    </FormInner>
 
-                        <Link to = "/" className="main_but">Отправить пароль на почту</Link>
-                    </MainForm>
+                    <Link to = "/" className="main_but">Отправить пароль на почту</Link>
+                </MainForm>
 
-                    <LogIn>
-                        <Link to = "/Main" >Войти</Link>
-                    </LogIn>
-                
-                    <Regist>Еще не с нами?<Link to = "/NewAcc">Зарегистрируйтесь</Link></Regist>
-                </MainContainer>
-            </MainSection>
+                <LogIn>
+                    <Link to = "/Main" >Войти</Link>
+                </LogIn>
+            
+                <Regist>Еще не с нами?<Link to = "/NewAcc">Зарегистрируйтесь</Link></Regist>
+            </MainContainer>
         </>
     )
 }
 
 
 export default ForgotPass;
-
-
-const Global = createGlobalStyle`
-    html {
-        min-width:350px
-    }
-
-    p, a{
-        font-family: 'AvenirNextRegular';
-        text-decoration: none;
-    };
-
-    @media (max-width: 450px) {
-        .agree-condit p {
-            font-size: 12px;
-        }
-
-        .agree-condit p {
-            font-size: 12px;
-        }
-    }
-`;
-
-const MainSection = styled.section`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100%;
-`;
 
 const MainContainer = styled.div`
     max-width: 500px;
@@ -121,6 +89,16 @@ const FormInner = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    label {
+        display:flex;
+        display: flex;
+        justify-content: center;
+        font-family: 'AvenirNextBold';
+        color: #416074;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
 `;
 
 const EntryField = styled.input`

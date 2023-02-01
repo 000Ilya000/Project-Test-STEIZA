@@ -5,11 +5,9 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 function Button () {
     return (
-        <div>
-            <MainBut>
-                <Link to = "/Main" className='main_but'>Войти в аккаунт</Link>
-            </MainBut>
-        </div>
+        <MainBut>
+            <Link to = "/Main">Войти в аккаунт</Link>
+        </MainBut>
     )
 }
   
@@ -18,7 +16,7 @@ export default Button;
 
 
 const MainBut = styled.div`
-    .main_but {
+    a {
         display: flex;
         font-weight: 700;
         text-decoration: none;
@@ -33,7 +31,7 @@ const MainBut = styled.div`
         background: #428EC0;
     }
 
-    .main_but:hover {
+    a:hover {
         background: #416074;
     }
 `;

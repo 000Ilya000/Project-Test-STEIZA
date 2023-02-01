@@ -9,7 +9,6 @@ import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";
 function Main() {
     return (
         <>
-            <Global/>
             <MainContainer>
                 <Logo>
                     <Link to = "/">
@@ -19,8 +18,10 @@ function Main() {
                     <Title>Войдите в ваш аккаунт</Title>
                 <MainForm>
                     <FormInner>
-                        <EntryField type="email" placeholder="Введите электронную почту"/>
-                        <EntryField type="password" placeholder="Введите пароль"/>
+                        <label for="email">Электронная почта</label>
+                        <EntryField type="email" id='email' placeholder="Введите электронную почту"/>
+                        <label for="password">Пароль</label>
+                        <EntryField type="password" id='password' placeholder="Введите пароль"/>
                     </FormInner>
             
                     <ContainerSocial>
@@ -50,16 +51,37 @@ function Main() {
 
 export default Main;
 
+const Title = styled.h1`
+    display: flex;
+    justify-content: center;
+    font-family: 'AvenirNextBold';
+    margin-top: 26px;
+    color: #416074;
+    font-size: 24px;
 
-const Global = createGlobalStyle`
-    html {
-        min-width:350px
-    }
-
-    p, a{
-        font-family: 'AvenirNextRegular';
-        text-decoration: none;
+    @media (max-width: 420px) {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;  
     };
+`;
+
+const Logo = styled.div`
+    a:first-child {
+        justify-content: center;
+        display: flex;
+    };
+    img {
+        max-height: 90px;
+    }
+`;
+
+const MainContainer = styled.div`
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     .main_but {
         font-weight: 700;
@@ -98,39 +120,6 @@ const Global = createGlobalStyle`
     }
 `;
 
-const Title = styled.h1`
-    display: flex;
-    justify-content: center;
-    font-family: 'AvenirNextBold';
-    margin-top: 26px;
-    color: #416074;
-    font-size: 24px;
-
-    @media (max-width: 420px) {
-        display: flex;
-        justify-content: center;
-        font-size: 20px;  
-    };
-`;
-
-const Logo = styled.div`
-    a:first-child {
-        justify-content: center;
-        display: flex;
-    };
-    img {
-        max-height: 90px;
-    }
-`;
-
-const MainContainer = styled.div`
-    min-width: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-`;
-
 const MainForm = styled.form`
     display: flex;
     flex-wrap: nowrap;
@@ -158,6 +147,17 @@ const FormInner = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 8px;
+
+    label {
+        display:flex;
+        display: flex;
+        justify-content: center;
+        font-family: 'AvenirNextBold';
+        color: #416074;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
 
     @media (max-width: 420px) {
         max-width: 90%;      
