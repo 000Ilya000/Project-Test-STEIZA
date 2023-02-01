@@ -17,11 +17,11 @@ function Main() {
                 </Logo>
                     <Title>Войдите в ваш аккаунт</Title>
                 <MainForm>
-                    <FormInner>
-                        <label for="email">Электронная почта</label>
-                        <EntryField type="email" id='email' placeholder="Введите электронную почту"/>
-                        <label for="password">Пароль</label>
-                        <EntryField type="password" id='password' placeholder="Введите пароль"/>
+                    <FormInner autocomplete="off">
+                        <label htmlFor="email">Электронная почта</label>
+                        <EntryField type="email" placeholder="Введите электронную почту" autocomplete="off"/>
+                        <label htmlFor="password">Пароль</label>    
+                        <EntryField type="password" placeholder="Введите пароль" autocomplete="new-password"/>
                     </FormInner>
             
                     <ContainerSocial>

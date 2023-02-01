@@ -21,16 +21,16 @@ function NewAcc() {
                 <MainForm>
 
                     <FormInner>
-                        <label for="email">Электронная почта</label>
-                        <EntryField type="email" placeholder="Электронная почта"/>
-                        <label for="password">Пароль</label>
-                        <EntryField type="password" placeholder="Пароль"/>
-                        <EntryField type="password" placeholder="Повторите пароль"/>
+                        <label htmlFor="email">Электронная почта</label>
+                        <EntryField type="email" placeholder="Электронная почта" autoComplete='off'/>
+                        <label htmlFor="password">Пароль</label>
+                        <EntryField type="password" placeholder="Пароль" autoComplete='off'/>
+                        <EntryField type="password" placeholder="Повторите пароль" autoComplete='off'/>
                     </FormInner>
 
                     <AgreeCondit>
-                        <label for="color-1">
-                            <InputCheckbox type="checkbox" id="color-1" name="color-1" value="indigo"/>
+                        <label htmlFor="color-1">
+                            <InputCheckbox type="checkbox" id="color-1" name="color-1" />
                             <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
                         </label>
                     </AgreeCondit>

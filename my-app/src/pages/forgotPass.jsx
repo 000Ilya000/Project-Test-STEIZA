@@ -16,8 +16,8 @@ function ForgotPass() {
                 <Title>Восстановление пароля</Title>
                 <MainForm>
                     <FormInner>
-                        <label for="email">Электронная почта</label>
-                        <EntryField type="email" placeholder="Ваша почта"/>
+                        <label htmlFor="email">Электронная почта</label>
+                        <EntryField type="email" placeholder="Ваша почта" autoComplete='off'/>
                     </FormInner>
 
                     <Link to = "/" className="main_but">Отправить пароль на почту</Link>
