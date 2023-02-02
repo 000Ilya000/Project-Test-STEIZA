@@ -29,8 +29,8 @@ function NewAcc() {
                     </FormInner>
 
                     <AgreeCondit>
+                        <InputCheckbox type="checkbox" id="color-1" name="color-1" />
                         <label htmlFor="color-1">
-                            <InputCheckbox type="checkbox" id="color-1" name="color-1" />
                             <p>Я согласен с <Link to ="/">Условиями</Link> и <Link to = "/">Политикой Конфиденциальности</Link></p>
                         </label>
                     </AgreeCondit>
@@ -158,19 +158,60 @@ const EntryField = styled.input`
 `;
 
 const InputCheckbox = styled.input`
-    width: 3%;
-    margin-left: 0;
-    margin-right: 7px;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
 `;
 
 const AgreeCondit = styled.div`
-    display: flex;
     margin-top: 8px;
     justify-content: center;
     margin-bottom: 8px;
+    display:flex;
+
+    input {
+        &+label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+        }
+    }
+
+    input {
+        &+label::before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 2px solid rgba(65, 66, 67, 0.3);
+            border-radius: 1em;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+    }
+
+    input:checked{
+        &+label::before{
+            border-color: #428EC0;
+            background-color: #428EC0;
+            content:"✓";
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 
     label {
-        display: flex;
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        height: 30px;
     }
 
     p {
